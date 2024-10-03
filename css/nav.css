@@ -1,0 +1,284 @@
+/* Estilo global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #111;
+    color: #fff;
+}
+
+/* Estilo do header */
+header {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgba(51, 51, 51, 0.13); /* Usando rgba para suavizar a cor */
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #1818186b;
+}
+
+.left-icons, .right-icons {
+    display: flex;
+    align-items: center;
+}
+
+.left-icons .icon, .right-icons .icon {
+    margin-left: 15px;
+    width: 24px;
+}
+
+.logo-container {
+    text-align: center;
+}
+
+.logo {
+    width: 120px;
+    height: auto;
+}
+
+.right-icons a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 15px;
+}
+
+.right-icons a:hover {
+    color: #ffcc00;
+}
+
+/* Estilo da navegação */
+nav {
+    background-color: #1a1a1a2a;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    
+}
+
+.nav-links {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 5px 0;
+    
+    
+}
+.nav-links .btnxprime{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.nav-links li {
+    margin-left: 50px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    transition: color 0.3s ease, letter-spacing 0.3s ease;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.nav-links a:hover {
+    color: #580202; /* Cor ao passar o mouse */
+    letter-spacing: 1px; /* Aumenta o espaçamento entre letras */
+}
+
+/* Botão Crown Charge */
+.crown-charge {
+    background-color: #ff9900;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-left: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.crown-charge:hover {
+    background-color: #ffcc00;
+}
+
+/* Estilos para o menu hambúrguer */
+.hamburger {
+    display: none; /* Inicialmente oculto */
+    font-size: 30px;
+    cursor: pointer;
+    color: #fff; /* Cor do ícone do menu */
+}
+
+/* Exibir menu hambúrguer em telas pequenas */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Oculta a lista de navegação padrão */
+        flex-direction: column; /* Torna a lista vertical */
+        position: absolute; /* Permite que o menu apareça sobre o conteúdo */
+        background-color: rgba(51, 51, 51, 0.9); /* Fundo do menu */
+        width: 100%; /* Largura total */
+        top: 60px; /* Posição abaixo do cabeçalho */
+        left: 0; /* Alinhamento à esquerda */
+        z-index: 1; /* Acima do fundo */
+    }
+
+    .nav-links.show {
+        display: flex; /* Exibe o menu quando a classe "show" está presente */
+    }
+
+    .hamburger {
+        display: block; /* Exibe o ícone de hambúrguer */
+    }
+}
+
+/* Hero section (sem alteração) */
+.hero {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 100px 20px;
+    background: url(../src/Prancheta\ 5.png) center center no-repeat;
+    height: 80vh;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Camada escura */
+    z-index: 1;
+}
+
+.hero-text, .hero-image {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-text {
+    max-width: 50%;
+    background-color: rgba(107, 3, 3, 0.32); /* Translucente */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.hero-text h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.hero-text h1:hover {
+    color: #070606;
+    letter-spacing: 1px;
+}
+
+.hero-text p {
+    font-size: 22px;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.buttons {
+    display: flex;
+}
+
+.buttons .btn {
+    padding: 10px 20px;
+    background-color: #610000;
+    color: #fff;
+    text-decoration: none;
+    margin-right: 20px;
+    border-radius: 5px;
+    transition: 1s;
+    font-weight: 700;
+}
+
+.buttons .btn:hover {
+    background-color: #610000;
+    color: black;
+    letter-spacing: 1px;
+}
+
+.hero-image img {
+    max-width: 350px;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    transition: 1s;
+}
+
+.hero-image img:hover {
+    transform: scale(1.2); /* Aumenta a imagem em 20% */
+    transition: 2s;
+}
+
+
+.jogue-agora {
+    margin: 0; /* Remove margens */
+    padding: 20px; /* Espaço interno */
+    border-radius: 10px; /* Bordas arredondadas */
+    background-color: rgba(41, 40, 40, 0.336); /* Fundo preto semi-transparente */
+    text-align: center; /* Centraliza o texto */
+    position: relative; /* Para que o posicionamento seja relativo ao seu elemento pai */
+    top: -50px; /* Ajuste para sobrepor levemente a seção hero */
+    margin-left: auto; /* Centraliza horizontalmente */
+    margin-right: auto; /* Centraliza horizontalmente */
+    z-index: 10; /* Para garantir que fique acima do fundo */
+}
+
+/* Estilo para os botões de download */
+.download-buttons {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os botões se movam para a linha seguinte se o espaço for insuficiente */
+    justify-content: center; /* Centraliza os botões horizontalmente */
+    margin-top: 20px; /* Espaço acima dos botões */
+}
+
+.download-button {
+    text-decoration: none;
+    color: #fff; /* Cor do texto dos botões */
+    background-color: #333; /* Cor de fundo dos botões */
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 10px; /* Espaçamento entre os botões */
+    display: inline-flex; /* Permite que o ícone e o texto estejam na mesma linha */
+    align-items: center; /* Centraliza verticalmente o conteúdo */
+    transition: background-color 0.3s ease; /* Transição suave para a cor de fundo */
+}
+
+.download-button:hover {
+    background-color: #ffcc00; /* Muda a cor de fundo ao passar o mouse */
+}
+
+/* Ícone do botão */
+.icon {
+    margin-right: 8px; /* Espaço entre o ícone e o texto */
+    width: 20px; /* Tamanho do ícone */
+    height: auto; /* Mantém a proporção do ícone */
+}

@@ -1,0 +1,47 @@
+// load WebFontLoader
+// if(document.querySelector('#jsGoogleWebFont')) {
+//   if(WebFont) {
+//     WebFont.load({
+//       google: {
+//         families: ['Noto Sans KR:300,400,500,700']
+//       }
+//     });
+//   }
+// }else {
+//   const url = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+
+//   loadJS(url, function() { 
+//     // put your code here to run after script is loaded
+//     WebFont.load({
+//       google: {
+//         families: ['Noto Sans KR:300,400,500,700,900']
+//       }
+//     });
+//   });
+// }
+
+
+// Functions
+function loadJS(src, callback) {
+  var scriptTag = document.createElement('script');
+  scriptTag.src = src;
+  scriptTag.async = true;
+  scriptTag.onreadystatechange = scriptTag.onload = function() {
+    var state = scriptTag.readyState;
+
+    if(!callback) {
+      return;
+    }
+    if (!callback.done && (!state || /loaded|complete/.test(state))) {
+      callback.done = true;
+      callback();
+    }
+  };
+  document.querySelector('head').appendChild(scriptTag);
+}
+
+if(navigator.appVersion.toLowerCase().indexOf('trident') > -1) {
+  var urlPolyfill = 'https://cdn.jsdelivr.net/npm/promise-polyfill@7.1.0/dist/promise.min.js';
+
+  loadJS(urlPolyfill);
+}

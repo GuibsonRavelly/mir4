@@ -1,0 +1,44 @@
+.about-mir4-xprime {
+    background-color: white; /* Fundo branco */
+    color: black; /* Texto preto */
+    margin: 60px 0; /* Espaço em cima e embaixo da seção */
+    text-align: center; /* Centraliza o texto do título */
+    padding: 40px; /* Espaçamento interno */
+    border-radius: 8px; /* Bordas arredondadas para a seção */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra leve para destaque */
+}
+
+.section-title h2 {
+    font-size: 36px; /* Tamanho do título */
+    margin-bottom: 40px; /* Espaço abaixo do título */
+}
+
+.content {
+    display: flex;
+    align-items: flex-start; /* Alinha os itens no topo */
+    margin-bottom: 40px; /* Espaço entre cada bloco de conteúdo */
+}
+
+.text-container, .image-container {
+    flex: 1; /* Permite que cada parte use o espaço disponível */
+    padding: 0 20px; /* Espaço lateral */
+}
+
+.image-container {
+    display: flex;
+    justify-content: center; /* Centraliza a imagem */
+}
+
+.image-item img {
+    max-width: 100%; /* Garante que a imagem não ultrapasse o contêiner */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 8px; /* Bordas arredondadas nas imagens */
+}
+
+.text-item {
+    text-align: left; /* Alinha o texto à esquerda */
+}
+
+.text-item h3 {
+    margin-bottom: 20px; /* Espaço abaixo do subtítulo */
+}
